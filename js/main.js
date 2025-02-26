@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         if (bannerWrapper && heroContent) {
-            bannerWrapper.style.transform = `scale(1.1) translateY(${scrolled * 0.4}px)`;
+            bannerWrapper.style.transform = `translateY(${scrolled * 0.4}px)`;
             heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
     });
