@@ -177,10 +177,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close modal when clicking the close button
+    // Pardoc special popup
+    const pardocName = document.querySelector('.pardoc-name');
+    pardocName?.addEventListener('click', () => {
+        const modal = document.getElementById('comingSoonModal');
+        const modalTitle = modal.querySelector('h3');
+        const modalText = modal.querySelector('p');
+        
+        modalTitle.textContent = 'Attention';
+        modalText.textContent = "This user is xoru's personal slave";
+        modal.classList.add('active');
+    });
+
+    // Reset modal content when closed
     const closeButton = modal.querySelector('.modal-close');
     closeButton.addEventListener('click', () => {
         modal.classList.remove('active');
+        setTimeout(() => {
+            const modalTitle = modal.querySelector('h3');
+            const modalText = modal.querySelector('p');
+            modalTitle.textContent = 'Coming Soon';
+            modalText.textContent = 'This feature is currently in development. Stay tuned!';
+        }, 300);
     });
 
     // Close modal when clicking outside
