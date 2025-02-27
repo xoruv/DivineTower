@@ -179,15 +179,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Pardoc special popup
     const pardocName = document.querySelector('.pardoc-name');
-    pardocName?.addEventListener('click', () => {
-        const modal = document.getElementById('comingSoonModal');
-        const modalTitle = modal.querySelector('h3');
-        const modalText = modal.querySelector('p');
-        
-        modalTitle.textContent = 'Attention';
-        modalText.textContent = "This user is xoru's personal slave";
-        modal.classList.add('active');
-    });
+    if (pardocName) {
+        pardocName.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modal = document.getElementById('comingSoonModal');
+            const modalTitle = modal.querySelector('h3');
+            const modalText = modal.querySelector('p');
+            
+            modalTitle.textContent = 'Attention';
+            modalText.textContent = "This user is xoru's personal slave";
+            modal.classList.add('active');
+        });
+    }
 
     // Reset modal content when closed
     const closeButton = modal.querySelector('.modal-close');
