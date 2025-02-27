@@ -974,4 +974,13 @@ h1, h2, h3 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.pardoc-name {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.pardoc-name:hover {
+    color: var(--accent-color);
 } 
